@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jarvis - Personal AI Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script defer src="assets/app.js"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header>
+        <div class="logo">
+          <span class="logo-icon">◇</span>
+          <div class="logo-copy">
+            <h1>Jarvis</h1>
+            <p>Your personal AI operations partner.</p>
+          </div>
+        </div>
+        <div class="system-status">
+          <span class="status-indicator" data-status="idle"></span>
+          <span class="status-copy">Systems Idle</span>
+        </div>
+      </header>
+
+      <main>
+        <section class="conversation" id="conversation">
+          <div class="message system">
+            <div class="avatar">J</div>
+            <div class="bubble">
+              <p>
+                Greetings, Commander. Jarvis is online and ready to orchestrate
+                your tasks. Issue a command or ask a question to begin.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <aside class="panel">
+          <section class="intel" id="intel-feed">
+            <h2>Mission Intelligence</h2>
+            <ul></ul>
+          </section>
+
+          <section class="shortcuts">
+            <h2>Quick Commands</h2>
+            <div class="quick-grid">
+              <button data-command="What is on my agenda today?">
+                Daily Brief
+              </button>
+              <button data-command="Summarize the conversation so far.">
+                Summarize
+              </button>
+              <button data-command="Run a system diagnostic.">
+                Diagnostics
+              </button>
+              <button data-command="Give me a motivational quote.">
+                Motivation
+              </button>
+              <button data-command="What is the current time in UTC?">
+                UTC Time
+              </button>
+              <button data-command="Generate a plan for learning Python in 4 weeks.">
+                Python Plan
+              </button>
+            </div>
+          </section>
+        </aside>
+      </main>
+
+      <footer>
+        <form id="command-form" autocomplete="off">
+          <button
+            type="button"
+            class="mic-button"
+            aria-label="Toggle voice input"
+            id="voice-toggle"
+          >
+            🎙️
+          </button>
+          <input
+            type="text"
+            id="command-input"
+            placeholder="Speak freely, Commander..."
+            required
+            autofocus
+          />
+          <button type="submit">Dispatch</button>
+        </form>
+      </footer>
+    </div>
+
+    <template id="message-template">
+      <div class="message">
+        <div class="avatar"></div>
+        <div class="bubble">
+          <p></p>
+        </div>
+      </div>
+    </template>
+  </body>
+</html>
